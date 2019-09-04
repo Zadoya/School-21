@@ -1,8 +1,6 @@
 #include "libft.h"
 
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
+void	ft_putstr(char const *str)
 {
 	int i;
 
