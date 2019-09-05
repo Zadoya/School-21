@@ -13,7 +13,7 @@ void	ft_putnbr(int n)
 	{
 		number  = (unsigned int)n;
 	}
-	if (number >= 0)
+	if (number >= 10)
 		ft_putnbr(number / 10);
 	ft_putchar((char)(number % 10 + '0'));
 }

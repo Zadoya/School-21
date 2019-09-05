@@ -1,4 +1,4 @@
-include "libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -13,7 +13,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		number  = (unsigned int)n;
 	}
-	if (number >= 0)
+	if (number >= 10)
 		ft_putnbr_fd(number / 10, fd);
 	ft_putchar_fd((char)(number % 10 + '0'), fd);
 }
