@@ -7,6 +7,31 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	
 	first = needle;
 	start = haystack;
+	if (*haystack == *needle && needle == first)
+	{
+		start = haystack;
+			while (*haystack == *needle && *haystack && *needle)
+			{
+				haystack++;
+				needle++;
+			}
+		}
+		else if (*haystack != *needle)
+		{
+			start = NULL;
+			needle = first;
+			haystack++;
+		}
+	}
+	return((char *)start);
+}
+
+/*{
+	const char *start;
+	const char *first;
+	
+	first = needle;
+	start = haystack;
 	while (*haystack || *needle)
 	{
 		if (*haystack == *needle)
@@ -24,4 +49,4 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		}
 	}
 	return((char *)start);
-}
+}*/

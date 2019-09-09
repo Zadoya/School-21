@@ -9,16 +9,20 @@ char tmp(char s)
 
 int main(void)
 {
-    char *c;
+    printf("%d\n", ft_isascii(0));
+    printf("%d\n", isascii(0));
+    return (0);
+
+    //char *c = malloc(10), *d;// = malloc(10);
+    
     //unsigned char *c;
     //const char *h = "sd1yfgvhltfjghkjkbkj";
-    c = ft_strstr("", "ugjhk");
-    printf("%s\n", c);
-    //printf("%s\n", c);
-    
-    //for (int j = 0; j < 6 ; j++)
-    c = strstr("", "ugjhk");
-    printf("%s", c);
+    //d = ft_strncpy(c, "dfg", 13);
+    //printf("%s\n", d);//ft_strcpy(c, "ugjhk"));
+    //d = strncpy(c, "dfg", 13);
+    //printf("%s\n", d);
+    //return (0);
+    //printf("%s", strcpy(c, ""));
       //printf("%s ",i);
     //*/
     //char *str = "aaaaa";
