@@ -9,9 +9,8 @@ char tmp(char s)
 
 int main(void)
 {
-    printf("%d\n", ft_isascii(0));
-    printf("%d\n", isascii(0));
-    return (0);
+    printf("%s\n", strnstr("frregehd","regf",1));
+    printf("%s\n", ft_strnstr("frregehd","regf",1));
 
     //char *c = malloc(10), *d;// = malloc(10);
     
