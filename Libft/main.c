@@ -9,8 +9,17 @@ char tmp(char s)
 
 int main(void)
 {
-    printf("%s\n", strnstr("frregehd","regf",1));
-    printf("%s\n", ft_strnstr("frregehd","regf",1));
+
+
+	//const unsigned char str[] = "1345676876867";
+	//char copy[] = "fdyttkmhg";
+	//printf("%s\n", memmove(copy, str, 12));
+	//printf("%s", ft_memmove(copy, str, 12));
+
+	//printf("%d", ft_atoi_b("ffa3f",16));
+
+    //printf("%s\n", strnstr("frregehd","reg",4));
+    //printf("%s\n", ft_strnstr("frregehd","reg",4));
 
     //char *c = malloc(10), *d;// = malloc(10);
     
@@ -24,7 +33,6 @@ int main(void)
     //printf("%s", strcpy(c, ""));
       //printf("%s ",i);
     //*/
-    //char *str = "aaaaa";
     //int i;
     //int *s[5];
     //int *str;
@@ -83,6 +91,6 @@ int main(void)
     //ft_putstr(ft_strjoin("12345", str));
     //ft_putstr(ft_strjoin("", "6789\n"));
     //ft_putstr(ft_strjoin("12345", "6789"));
-    //ft_putstr(ft_strtrim("    jefjl  k f jfk k  ff    "));
+    printf("%s", ft_strtrim("    jefjl  k f jfk k  ff    "));
     return (0);
 }

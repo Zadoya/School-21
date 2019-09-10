@@ -1,17 +1,11 @@
 #include "libft.h"
 
-void *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
-    void *rezult;
-    char *ptr;
+	void *rezult;
 
-    if ((rezult = malloc(size)))
-    {
-        ptr = (char *)rezult;
-        while (size-- > 0)
-            ptr[size] = 0;
-        return (rezult);
-    }
-    else
-        return (NULL);
+	if (!(rezult = malloc(size)))
+		return (NULL);
+	ft_bzero(rezult, size);
+	return (rezult);
 }

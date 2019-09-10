@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int		digits(char *str, int number, int i, int znak)
+static int		digits(const char *str, int number, int i, int znak)
 {
 	while ((str[i] != '\0') && ((str[i] == '\t') || (str[i] == '\v') ||
 			(str[i] == '\n') || (str[i] == ' ') || (str[i] == '\r') ||
@@ -25,7 +25,7 @@ int		digits(char *str, int number, int i, int znak)
 	return (number);
 }
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
 	int znak;

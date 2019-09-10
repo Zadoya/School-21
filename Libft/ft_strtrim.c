@@ -3,9 +3,10 @@
 char	*ft_strtrim(char const *s)
 {
 	char *new;
-	int i;
+	size_t i, len
 
 	i = 0;
+	
 	if (!s || !(new = (char *)ft_memalloc(sizeof(s) + 1)))
 		return (NULL);
 	while (*s)
