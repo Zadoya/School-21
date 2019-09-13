@@ -5,7 +5,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char 			*new;
 	unsigned int 	i;
 
-	if (s && (new = ft_memalloc(ft_strlen(s) + 1)))
+	if (s && (new = ft_memalloc(ft_strlen(s))))
 	{
 		i = 0;
 

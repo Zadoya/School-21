@@ -3,18 +3,20 @@
 char	*ft_strtrim(char const *s)
 {
 	char *new;
-	size_t i, len
+	size_t i, j, len;
 
 	i = 0;
-	
-	if (!s || !(new = (char *)ft_memalloc(sizeof(s) + 1)))
+	j = 0;
+	if (!s)
 		return (NULL);
-	while (*s)
-	{
-		while (*s != ' ' || *s != '\n' || *s != '\t' || *s)
-			new[i++] = *(s++);
-		while (*s == ' ' || *s == '\n' || *s == '\t' || *s)
-			s++;
-	}
+	len = ft_strlen(s);
+	while ((s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t') && len > 0)
+			len--;
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i])
+		i++;
+	if (!(new = ft_strnew(len - i)) || !len)
+		return (NULL);
+	while (i < len)
+		new[j++] = s[i++];
 	return(new);
 }

@@ -91,6 +91,24 @@ int main(void)
     //ft_putstr(ft_strjoin("12345", str));
     //ft_putstr(ft_strjoin("", "6789\n"));
     //ft_putstr(ft_strjoin("12345", "6789"));
-    printf("%s", ft_strtrim("    jefjl  k f jfk k  ff    "));
+    //printf("%s", ft_strtrim("    jefjl  k f jfk k  ff    "));
+    /*char **tab;
+    int i = 0;
+    tab = ft_strsplit("    jefjl  k f jfk k  ff    ", ' ');
+    while (tab[i])
+    {
+        printf("%s\n", tab[i]);
+        i++;
+    }*/
+    t_list *list = NULL;
+
+    for (int i = 1; i < 10; i++)
+    {
+      ft_lstadd(&list, ft_lstnew((const void*)&i, sizeof(int)));
+    }
+    for (int i = 1; i < 10; i++)
+    {
+      printf("%d, ", (int)list->content);
+    }
     return (0);
 }
