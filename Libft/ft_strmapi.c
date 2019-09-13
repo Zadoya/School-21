@@ -11,7 +11,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 		while (*s)
 		{
-			new[i] = (*f)(i++, *(s++));
+			new[i] = (*f)(i, *(s++));
+			i++;
 		}
 		return (new);
 	}

@@ -12,13 +12,13 @@
 
 NAME = libft.a
 FUNCTIONS = *.c
-FLAGS = -Wall -Wextra -Werror -I -c
+FLAGS = -Wall -Wextra -Werror -I. -c
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRCS) libft.h
 	@gcc $(FLAGS) $(FUNCTIONS)
 	@ar rc $(NAME) *.o
 	@ranlib $(NAME)
