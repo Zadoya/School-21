@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeckhard <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/15 21:38:42 by jeckhard          #+#    #+#             */
+/*   Updated: 2019/09/15 21:38:44 by jeckhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int w_counter(const char *s, char c)
@@ -7,9 +19,12 @@ static int w_counter(const char *s, char c)
 
     while (s[i])
     {
-        if (s[i - 1] == c && s[i] != c )
-            counter++;
-        i++;
+        while (s[i] == c)
+          i++;
+        if (s[i])
+          counter++;
+        while (s[i] != c && s[i])
+          i++;
     }
     return(counter);
 }
