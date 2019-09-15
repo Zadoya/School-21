@@ -10,9 +10,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	while (dest[i] != '\0' && i < size - 1)
 		i++;
 	if (i == size - 1)
-		return (size + strlen(src));
+		return (size + ft_strlen(src));
 	while (i < size - 1 && src[j])
 		dest[i++] = src[j++];
 	dest[i] = '\0';
-	return (strlen(dest) + strlen(src));
+	return (ft_strlen(dest) + ft_strlen(src));
 }

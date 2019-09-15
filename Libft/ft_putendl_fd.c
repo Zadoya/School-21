@@ -7,5 +7,5 @@ void	ft_putendl_fd(char const *str, int fd)
 	i = 0;
 	while (str[i])
 		ft_putchar_fd(str[i++], fd);
-	ft_putchar('\n');
+	ft_putchar_fd('\n', fd);
 }

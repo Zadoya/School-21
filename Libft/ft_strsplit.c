@@ -23,9 +23,9 @@ static char **fill_tab(const char *str, char c, char **tab)
     {
         while(str[i] == c)
             i++;
-        while(str[i +counter] != c && str[i])
+        while(str[i + counter] != c && str[i + counter])
             counter++;
-        if (!(word = malloc(counter)))
+        if (!(word = malloc(counter + 1)))
             return (NULL);
         counter = 0;
         while(str[i] != c && str[i])

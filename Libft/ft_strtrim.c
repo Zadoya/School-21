@@ -14,7 +14,7 @@ char	*ft_strtrim(char const *s)
 			len--;
 	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i])
 		i++;
-	if (!(new = ft_strnew(len - i)) || !len)
+	if (!(new = ft_strnew(len - i)))
 		return (NULL);
 	while (i < len)
 		new[j++] = s[i++];
