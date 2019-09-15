@@ -18,6 +18,6 @@ int		ft_isupper(int c)
 
 	simbol = (unsigned char)c;
 	if (simbol >= 'A' && simbol <= 'Z')
-			return (1);
+		return (1);
 	return (0);
 }

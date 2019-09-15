@@ -14,9 +14,9 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	size_t diff;
-	char *first_rez;
-	char *first_n;
+	size_t	diff;
+	char	*first_rez;
+	char	*first_n;
 
 	first_n = (char *)needle;
 	if (!*needle)
@@ -29,13 +29,11 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		{
 			first_rez = (char *)haystack;
 			while (*(++needle))
-			{
 				if (*(++haystack) != *needle)
 					diff++;
-			}
 			if (diff == 0)
 				return (first_rez);
-			haystack = first_rez; 
+			haystack = first_rez;
 		}
 		haystack++;
 	}

@@ -16,7 +16,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *new;
 
-	
 	if (lst && (new = (t_list *)ft_memalloc(sizeof(t_list))))
 	{
 		new = f(lst);

@@ -18,6 +18,6 @@ int		ft_islower(int c)
 
 	simbol = (unsigned char)c;
 	if (simbol >= 'a' && simbol <= 'z')
-			return (1);
+		return (1);
 	return (0);
 }

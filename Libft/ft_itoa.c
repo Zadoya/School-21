@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int memory(int n, int counter)
+static int		memory(int n, int counter)
 {
 	unsigned int tmp;
 
@@ -31,11 +31,11 @@ static int memory(int n, int counter)
 	return (counter);
 }
 
-static char *nbr(int n, int counter)
+static char		*nbr(int n, int counter)
 {
-	char *num;
-	unsigned int tmp;
-	
+	char			*num;
+	unsigned int	tmp;
+
 	if ((num = (char *)malloc(sizeof(char) * (counter + 1))))
 	{
 		num[counter--] = '\0';
@@ -54,16 +54,16 @@ static char *nbr(int n, int counter)
 	}
 	else
 		return (NULL);
-	return(num);
+	return (num);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int counter;
 
 	counter = 0;
 	counter = memory(n, counter);
 	if (counter == 0)
-    	return ("0\0");
+		return ("0\0");
 	return (nbr(n, counter));
 }

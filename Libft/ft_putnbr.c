@@ -15,7 +15,7 @@
 void	ft_putnbr(int n)
 {
 	unsigned int number;
-	
+
 	if (n < 0)
 	{
 		ft_putchar('-');
@@ -23,7 +23,7 @@ void	ft_putnbr(int n)
 	}
 	else
 	{
-		number  = (unsigned int)n;
+		number = (unsigned int)n;
 	}
 	if (number >= 10)
 		ft_putnbr(number / 10);

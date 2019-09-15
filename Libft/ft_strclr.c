@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-void ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
-    while (*s && s)
-        *(s++) = '\0';
+	while (*s && s)
+		*(s++) = '\0';
 }

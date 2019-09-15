@@ -14,10 +14,10 @@
 
 int		ft_isprint(int c)
 {
-    unsigned char simbol;
+	unsigned char simbol;
 
-    simbol = c;
+	simbol = c;
 	if (simbol >= 32 && simbol <= 126)
-			return (1);
+		return (1);
 	return (0);
 }

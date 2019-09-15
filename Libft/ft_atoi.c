@@ -37,7 +37,7 @@ static int		digits(const char *str, int number, int i, int znak)
 	return (number);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	int i;
 	int znak;
