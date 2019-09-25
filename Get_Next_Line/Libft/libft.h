@@ -90,7 +90,7 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 int				ft_getc_fd(int fd);
-char			*ft_gets_fd(int fd, char *str, size_t len);
+int				ft_gets_fd(int fd, char **str, size_t len);
 
 int				ft_isalpha(int c);
 int				ft_isupper(int c);

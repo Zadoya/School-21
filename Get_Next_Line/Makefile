@@ -26,7 +26,7 @@ $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-%.o: %.c $(HEADER)
+%.o: %.c $(HEADER )
 	$(CC) -o $@ $(FLAGS) $<
 
 clean:

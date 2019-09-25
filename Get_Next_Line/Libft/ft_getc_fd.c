@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int		ft_getchar_fd(int fd)
+int		ft_getc_fd(int fd)
 {
 	unsigned char	c;
 	int				re;

@@ -81,7 +81,8 @@ FUNCTIONS = ft_atof.c\
 			ft_tree_rotleft.c\
 			ft_tree_rotright.c\
 			ft_tree_uncle.c\
-			ft_getchar.c
+			ft_getc_fd.c\
+			ft_gets_fd.c
 
 OBJECTS=$(FUNCTIONS:.c=.o)
 
