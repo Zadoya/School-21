@@ -1,3 +1,0 @@
-In you header file get_next_line.h you must have at least 
-function get_next_line and a macro that allows to choose the size of the reading is fine 
-buffer for the read function. This value will be modified during the defence to

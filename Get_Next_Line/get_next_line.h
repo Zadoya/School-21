@@ -13,12 +13,20 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 9999
 # define FD_MAX 2147483647
 
 # include "libft/libft.h"
 
-int		get_next_line(const int fd, char **line);
-char	*ft_strchr(const char *s, int c);
+typedef struct  s_line
+{
+    int             fd;
+    char            *content;
+    size_t          content_size;
+    struct s_line   *next;
+}               t_line;
+
+int             get_next_line(const int fd, char **line);
+int             gnl(const int fd, char **line);
 
 #endif
