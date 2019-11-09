@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeckhard <jeckhard@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: jeckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 22:07:15 by jeckhard          #+#    #+#             */
-/*   Updated: 2016/08/13 22:07:16 by jeckhard         ###   ########.fr       */
+/*   Created: 2019/09/15 21:26:20 by jeckhard          #+#    #+#             */
+/*   Updated: 2019/09/15 21:26:21 by jeckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int 	ft_sqrt(int nb)
+int		ft_isdigit(int c)
 {
-	int sqr;
-
-	sqr = 1;
-	while ((sqr * sqr) < nb)
-		sqr++;
-	return (sqr);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

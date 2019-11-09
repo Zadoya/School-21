@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeckhard <jeckhard@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: jeckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 22:07:15 by jeckhard          #+#    #+#             */
-/*   Updated: 2016/08/13 22:07:16 by jeckhard         ###   ########.fr       */
+/*   Created: 2019/09/15 21:27:59 by jeckhard          #+#    #+#             */
+/*   Updated: 2019/09/15 21:28:01 by jeckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int 	ft_sqrt(int nb)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int sqr;
+	t_list *tmp;
 
-	sqr = 1;
-	while ((sqr * sqr) < nb)
-		sqr++;
-	return (sqr);
+	if (alst)
+		while (*alst)
+		{
+			tmp = (*alst)->next;
+			ft_lstdelone(alst, del);
+			(*alst) = tmp;
+		}
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_tree_uncle.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeckhard <jeckhard@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: jeckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 22:07:15 by jeckhard          #+#    #+#             */
-/*   Updated: 2016/08/13 22:07:16 by jeckhard         ###   ########.fr       */
+/*   Created: 2019/09/17 15:28:50 by jeckhard          #+#    #+#             */
+/*   Updated: 2019/09/17 15:28:52 by jeckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int 	ft_sqrt(int nb)
+t_btree	*ft_tree_uncle(t_btree *node)
 {
-	int sqr;
+	t_btree *gparent;
 
-	sqr = 1;
-	while ((sqr * sqr) < nb)
-		sqr++;
-	return (sqr);
+	gparent = ft_tree_gparent(node);
+	if (gparent == NULL)
+		return (NULL);
+	if (node->parent == gparent->left)
+		return (gparent->right);
+	else
+		return (gparent->left);
 }

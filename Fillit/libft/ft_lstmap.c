@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeckhard <jeckhard@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: jeckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 22:07:15 by jeckhard          #+#    #+#             */
-/*   Updated: 2016/08/13 22:07:16 by jeckhard         ###   ########.fr       */
+/*   Created: 2019/09/15 21:28:43 by jeckhard          #+#    #+#             */
+/*   Updated: 2019/09/15 21:28:44 by jeckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int 	ft_sqrt(int nb)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int sqr;
+	t_list *new;
 
-	sqr = 1;
-	while ((sqr * sqr) < nb)
-		sqr++;
-	return (sqr);
+	if (lst && (new = (t_list *)ft_memalloc(sizeof(t_list))))
+	{
+		new = f(lst);
+		new->next = ft_lstmap(lst->next, f);
+		return (new);
+	}
+	return (NULL);
 }

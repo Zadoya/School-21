@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeckhard <jeckhard@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: jeckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 22:07:15 by jeckhard          #+#    #+#             */
-/*   Updated: 2016/08/13 22:07:16 by jeckhard         ###   ########.fr       */
+/*   Created: 2019/09/15 21:29:09 by jeckhard          #+#    #+#             */
+/*   Updated: 2019/09/15 21:29:12 by jeckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int 	ft_sqrt(int nb)
+void	*ft_memalloc(size_t size)
 {
-	int sqr;
+	void *rezult;
 
-	sqr = 1;
-	while ((sqr * sqr) < nb)
-		sqr++;
-	return (sqr);
+	if (!(rezult = malloc(size)))
+		return (NULL);
+	ft_bzero(rezult, size);
+	return (rezult);
 }

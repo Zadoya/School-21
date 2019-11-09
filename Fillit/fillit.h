@@ -1,8 +1,48 @@
-typedef struct		s_tetr
+#ifndef FILLIT_H
+#define FILLIT_H
+
+# include "libft/libft.h"
+# include <fcntl.h>
+
+# define BLOCK '#'
+# define EMPTY '.'
+  
+typedef struct	s_tetr
 {
-	int				fig_num;
-	char			fig[4][5];
+	int				blockcoords[8];
+	int				tetr_number;
+	int				x_offset;
+	int				y_offset;
 	struct s_tetr	*next;
-	struct s_tetr	*prev;
-	
-}					t_tetr;
+}				t_tetr;
+
+typedef struct	s_map
+{
+	char		**array;
+}				t_map;
+
+//validator
+int 	block_counter(char *buf);
+int		touch_counter(char *buf);
+int		valid(char *buf, int size);
+t_tetr	*validator(char *file);
+
+//ft_sqrt
+int 	ft_sqrt(int nb);
+
+//algorithm
+size_t	tetr_count(t_tetr *list);
+void	solver(t_tetr *list);
+
+//list
+void	free_list(t_tetr *list);
+t_tetr	*align(t_tetr *tetr);
+t_tetr  *tetr_new(char *buf, int tetr_number);
+t_tetr  *makelist(char *buf, int size);
+
+//map
+t_map	*new_map(int map_size);
+void	print_map(t_map *map, int size);
+void	free_map(t_map *map, int map_size);
+
+#endif

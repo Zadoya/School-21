@@ -1,25 +1,39 @@
+   
 #include <fillit.h>
-#include <unistd.h>
 
-int		counter_fig(t_tetr **list)
+
+size_t		tetr_count(t_tetr *list)
 {
-	t_tetr	*tmp;
-	int		i;
+	size_t		i;
 
-	tmp = *list;
 	i = 0;
-	while (tmp)
+	while (list != NULL)
 	{
-		tmp = tmp->next;
+		list = list->next;
 		i++;
 	}
 	return(i);
 }
 
-void	algorithm_x(t_tetr **list)
+int		solve_map(t_map *map, t_tetr *tetr, int map_size)
 {
-	int		min_square, max_square, figures;
+	
+}
 
-	figures = counter_fig(list);
-	max_square = (figures * 4)
+void	solver(t_tetr *list)
+{
+	t_map	*map;
+	int		map_size;
+
+	map_size = ft_sqrt(tetr_count(list) * 4);
+	while (1)
+	{
+		map = new_map(map_size);
+		if (solve_map(map, map_size))
+			break ;
+		free_map(map, map_size);
+		map_size++;
+	}
+	print_map(map, map_size);
+	free_map(map, map_size);
 }
