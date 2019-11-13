@@ -21,3 +21,16 @@ int 	ft_sqrt(int nb)
 		sqr++;
 	return (sqr);
 }
+
+size_t		tetr_count(t_tetr *list)
+{
+	size_t		i;
+
+	i = 0;
+	while (list != NULL)
+	{
+		list = list->next;
+		i++;
+	}
+	return(i);
+}

@@ -13,7 +13,7 @@ int 	block_counter(char *buf)
 			return(0);
 		if (buf[i] == '\n' && (i + 1) % 5 != 0)
 			return (0);
-		if (buf == BLOCK)
+		if (buf[i] == BLOCK)
 			count++;
 		i++;
 	}
@@ -32,7 +32,7 @@ int		touch_counter(char *buf)
 	count = 0;
 	while (i < 19)
 	{
-		if (buf[i] == '#')
+		if (buf[i] == BLOCK)
 		{
 			if (i + 1 <= 18 && buf[i + 1] == '#')
 				count++;
@@ -71,11 +71,13 @@ t_tetr	*validator(char *file)
 	int		bytecount;
 
 	fd = open(file, O_RDONLY);
-	bytecount = read(fd, buf, 545);
-	close(fd);
-	if (bytecount > 544 || bytecount < 19)
+	if ((fd = open(file, O_RDONLY)) == -1)
 		return (NULL);
+	bytecount = read(fd, buf, 546);
 	buf[bytecount] = '\0';
+	close(fd);
+	if (bytecount > 545 || bytecount < 19)
+		return (NULL);
 	if (!valid(buf, bytecount))
 		return (NULL);
 	return (makelist(buf, bytecount));

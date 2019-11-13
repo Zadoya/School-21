@@ -58,6 +58,7 @@ t_tetr  *tetr_new(char *buf, int tetr_number)
 	}
 	new->x_offset = 0;
 	new->y_offset = 0;
+    new->next = NULL;
 	new->tetr_number = tetr_number;
 	return (align(new));
 
@@ -70,8 +71,9 @@ t_tetr  *makelist(char *buf, int size)
     int     i;
     int     tetr_number;
 
+    head = NULL;
     i = 0;
-    tetr_number = 1;
+    tetr_number = 0;
     while (i < size)
     {
         if (head == NULL)

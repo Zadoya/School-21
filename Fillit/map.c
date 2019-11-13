@@ -5,6 +5,7 @@ t_map	*new_map(int map_size)
 	t_map	*map;
 	int		i;
 	
+	i = 0;
 	map = (t_map *)malloc(sizeof(t_map));
 	map->array = (char **)ft_memalloc(sizeof(char *) * map_size);
 	while (i < map_size)

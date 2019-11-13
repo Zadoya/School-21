@@ -29,9 +29,13 @@ t_tetr	*validator(char *file);
 
 //ft_sqrt
 int 	ft_sqrt(int nb);
+size_t	tetr_count(t_tetr *list);
 
 //algorithm
-size_t	tetr_count(t_tetr *list);
+int		overlap(t_map *map, t_tetr *tetr);
+void	place(t_tetr *tetr, t_map *map, char symbol);
+int		in_bouds(t_tetr *tetr, int map_size, char axis);
+int		solve_map(t_map *map, t_tetr *tetr, int map_size);
 void	solver(t_tetr *list);
 
 //list

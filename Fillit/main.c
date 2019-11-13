@@ -14,6 +14,6 @@ int		main(int ac, char **av)
 		ft_putstr("error\n");
 		return (1);
 	}
-	solve(tetr_list);
+	solver(tetr_list);
 	return(0);
 }
