@@ -51,13 +51,14 @@ int		touch_counter(char *buf)
 int		valid(char *buf, int size)
 {
 	int		i;
-
+	int		touches;
 	i = 0;
 	while(i <= size)
 	{
 		if (block_counter(buf + i) != 4)
 			return (0);
-		if (touch_counter(buf + 1) != 6 && touch_counter(buf + 1) != 8)
+		touches = touch_counter(buf + i);
+		if (touches != 6 && touches != 8)
 			return (0);
 			i += 21;
 	}
@@ -71,12 +72,12 @@ t_tetr	*validator(char *file)
 	int		bytecount;
 
 	fd = open(file, O_RDONLY);
-	if ((fd = open(file, O_RDONLY)) == -1)
+	if ((fd = open("file", O_RDONLY)) == -1)
 		return (NULL);
 	bytecount = read(fd, buf, 546);
 	buf[bytecount] = '\0';
 	close(fd);
-	if (bytecount > 545 || bytecount < 19)
+	if (bytecount > 545 || bytecount <= 19)
 		return (NULL);
 	if (!valid(buf, bytecount))
 		return (NULL);

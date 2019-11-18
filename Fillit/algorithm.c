@@ -50,7 +50,6 @@ int		solve_map(t_map *map, t_tetr *tetr, int map_size)
 	{
 		while (in_bounds(tetr, map_size, 'x'))
 		{
-			//ft_putstr(ft_itoa(map_size));
 			if (!overlap(map, tetr))
 			{
 				place(tetr, map, tetr->tetr_number + 'A');

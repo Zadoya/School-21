@@ -18,7 +18,16 @@ FUNCTIONS = ft_sqrt.c\
 			map.c\
 			validator.c
 
-OBJECTS=$(FUNCTIONS:.c=.o)
+# change these to set the proper directories where each files shoould be
+SRCDIR   = src
+OBJDIR   = obj
+
+SOURCES  := $(wildcard $(SRCDIR)/*.c)
+OBJECTS  := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+ODIR = objects
+
+OBJECTS= $(patsubst %.c,$(ODIR)/%.o,$(FUNCTIONS))
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -30,11 +39,13 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME): 	$(OBJECTS)
+$(NAME): 	
+			mkdir $(ODIR)
+			$(OBJECTS)
 			make -C $(LIBFT)
 			$(CC) $(FLAGS) $(OBJECTS) libft/libft.a -o $(NAME)
 
-%.o: 		%.c -I.
+$(OBJECTS):	$(ODIR)/%.o: %.c -I. | $(OBJDIR)
 			$(CC) -o $@ $(FLAGS) $<
 
 clean:
